@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicCraft — AI Comic Story Creator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="hero-page">
+    <div class="background-overlay"></div>
+
+    <main class="hero-shell">
+        <section class="brand">
+            <div class="comic-bubble">Create your own comic!</div>
+            <br>
+            <span class="badge">⚡ AI COMIC CREATOR</span>
+            <h1>Comic<span>Craft</span></h1>
+            <p>Turn one idea into a complete comic with AI-generated story, dialogue, narration and illustrations.</p>
+        </section>
+
+        <section class="glass-card form-card">
+            <div class="card-heading">
+                <h2>🕷️ Create Your Comic</h2>
+                <p>Choose your story ingredients and let ComicCraft build the adventure.</p>
+            </div>
+
+            <form action="/generate" method="post" id="comic-form">
+                <label for="story_prompt">Story Prompt</label>
+                <textarea id="story_prompt" name="story_prompt" rows="4" required
+                    placeholder="Example: A brave fox explores an enchanted forest and discovers a hidden moon garden.">A brave fox exploring an enchanted forest</textarea>
+
+                <div class="grid-2">
+                    <div>
+                        <label for="character_name">Main Character</label>
+                        <input id="character_name" name="character_name" value="Finn" required>
+                    </div>
+                    <div>
+                        <label for="setting">Setting</label>
+                        <select id="setting" name="setting">
+                            <option>Forest</option>
+                            <option>School</option>
+                            <option>Space</option>
+                            <option>City</option>
+                            <option>Fantasy Kingdom</option>
+                            <option>Underwater World</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div>
+                        <label for="tone">Story Tone</label>
+                        <select id="tone" name="tone">
+                            <option>Funny</option>
+                            <option>Light-hearted</option>
+                            <option>Dramatic</option>
+                            <option>Poetic</option>
+                            <option>Adventurous</option>
+                            <option>Mysterious</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="art_style">Art Style</label>
+                        <select id="art_style" name="art_style">
+                            <option>Comic book</option>
+                            <option>Anime</option>
+                            <option>Pixel art</option>
+                            <option>Realistic</option>
+                            <option>Watercolor</option>
+                            <option>Cartoon</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="primary-btn" type="submit">
+                    <span>✨ Generate My Comic</span>
+                </button>
+            </form>
+
+            <div class="feature-row">
+                <span>⚡ Gemini Story</span>
+                <span>🎨 AI Illustrations</span>
+                <span>📄 PDF Export</span>
+            </div>
+        </section>
+    </main>
+
+    <div class="loading-panel" id="loading-panel" aria-hidden="true">
+        <div class="loading-card">
+            <div class="spinner"></div>
+            <h2>Creating your comic...</h2>
+            <p>ComicCraft is writing the story and preparing your panel illustrations. Please keep this tab open.</p>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
